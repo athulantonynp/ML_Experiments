@@ -13,14 +13,17 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 
-
+#Reading the csv file from the same directory
 dataset=pd.read_csv('hotel_data.csv')
 
+#Replacing all the veg&non-veg keys into 0 and 1
 dataset.loc[dataset['Veg/Non-Veg'] =='V', 'Veg/Non-Veg'] = 1
 dataset.loc[dataset['Veg/Non-Veg'] =='N', 'Veg/Non-Veg'] = 0
 
+#Allocationg variables
 X=dataset.iloc[:,:-1].values
 Y=dataset.iloc[:,4].values
+
 
 #Taking care of missing data
 from sklearn.preprocessing import Imputer
@@ -28,11 +31,14 @@ imputer =Imputer(missing_values='NaN',strategy='mean',axis=0)
 imputer=imputer.fit(X[:,1:2])
 X[:,1:2]=imputer.transform(X[:,1:2])
 
+#Again taking care of missing data
 imputer2 =Imputer(missing_values='NaN',strategy='mean',axis=0)
 imputer2=imputer.fit(X[:,3:4])
 X[:,3:4]=imputer2.transform(X[:,3:4])
 
 #Categorizing and encoding
+#Why needed categorizing? Simple, If we uses any string values,Those cannot be imputed
+#This method will does it for you
 from sklearn.preprocessing import LabelEncoder,OneHotEncoder
 labelencoder_X=LabelEncoder()
 X[:,0]=labelencoder_X.fit_transform(X[:,0])
@@ -48,9 +54,8 @@ Y=labelencoder_Y.fit_transform(Y)
 from sklearn.model_selection import train_test_split
 X_train,X_test,Y_train,Y_test=train_test_split(X,Y,test_size=0.2,random_state=0)
 
-#Feature scaling
+#Feature scaling (According to Euclid's theory )
 from sklearn.preprocessing import StandardScaler
-
 sc_X= StandardScaler()
 X_train=sc_X.fit_transform(X_train)
 X_test=sc_X.transform(X_test)
