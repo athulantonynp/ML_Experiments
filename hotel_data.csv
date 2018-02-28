@@ -1,0 +1,26 @@
+Location of customer,Seat,Choice,Veg/Non-Veg,Return
+Kochi,1,Hard,V,TRUE
+Trivandrum,2,Soft,N,FALSE
+Calicut,3,Hard,V,TRUE
+Trivandrum,2,Soft,N,FALSE
+Kochi,1,Hard,V,FALSE
+Calicut,4,Hard,V,TRUE
+Trivandrum,5,Hard,N,TRUE
+Trivandrum,3,Soft,N,FALSE
+Kochi,,Soft,V,FALSE
+Calicut,1,Soft,N,FALSE
+Calicut,2,Hard,V,FALSE
+Kochi,4,Soft,V,TRUE
+Trivandrum,5,Hard,N,TRUE
+Calicut,3,Soft,N,FALSE
+Trivandrum,6,Hard,,FALSE
+Kochi,2,Soft,,FALSE
+Calicut,6,Hard,V,FALSE
+Kochi,,Soft,N,TRUE
+Trivandrum,2,Hard,V,TRUE
+Calicut,4,Hard,N,FALSE
+Trivandrum,1,Soft,V,TRUE
+Kochi,3,Soft,V,FALSE
+Trivandrum,2,Hard,N,TRUE
+Calicut,5,Hard,V,TRUE
+Trivandrum,5,Soft,V,FALSE
