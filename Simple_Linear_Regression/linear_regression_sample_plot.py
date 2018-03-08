@@ -1,6 +1,10 @@
 import numpy as np 
 import matplotlib.pyplot as plt 
 
+#This module will show a simple linear regression line graph
+#for a sample dataset.
+# Least Squares technique is used for finding the regression coefficients
+
 def estimate_coef(x, y):
     # number of observations/points
     n = np.size(x)
